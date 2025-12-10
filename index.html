@@ -6,17 +6,53 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 </head>
 
 <body>
   <a-scene mindar-image="imageTargetSrc: ./targets.mind" vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
+
+    <a-assets>
+      <a-asset-item id="bumboldModel" src="./models/Bumbold.glb"></a-asset-item>
+      <a-asset-item id="twickleModel" src="./models/Twickle.glb"></a-asset-item>
+      <a-asset-item id="mosslooModel" src="./models/Mossloo.glb"></a-asset-item>
+      <a-asset-item id="nimquiModel" src="./models/Nimqui.glb"></a-asset-item>
+    </a-assets>
+
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-    <a-entity mindar-image-target="targetIndex: 0">
-      <a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+
+    <a-entity target-img mindar-image-target="targetIndex: 0">
+      <a-entity id="bumboldContainer" class="model-container" position="0 -1 0" scale="0 0 0">
+        <a-entity id="bumboldEntity" gltf-model="#bumboldModel" animation-mixer="clip: Dance;"
+          scale="0.75 0.75 0.75"></a-entity>
+      </a-entity>
     </a-entity>
+
+    <a-entity target-img mindar-image-target="targetIndex: 1">
+      <a-entity id="twickleContainer" class="model-container" position="0 -0.5 0" scale="0 0 0">
+        <a-entity id="twickleEntity" gltf-model="#twickleModel" animation-mixer="clip: Dance;"
+          scale="0.5 0.5 0.5"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <a-entity target-img mindar-image-target="targetIndex: 2">
+      <a-entity id="mosslooContainer" class="model-container" position="0 -0.5 0" scale="0 0 0">
+        <a-entity id="mosslooEntity" gltf-model="#mosslooModel" animation-mixer="clip: Dance;"
+          scale="0.5 0.5 0.5"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <a-entity target-img mindar-image-target="targetIndex: 3">
+      <a-entity id="nimquiContainer" class="model-container" position="0 -1 0" scale="0 0 0">
+        <a-entity id="nimquiEntity" gltf-model="#nimquiModel" animation-mixer="clip: Dance;"
+          scale="0.75 0.75 0.75"></a-entity>
+      </a-entity>
+    </a-entity>
+
   </a-scene>
+  <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>
