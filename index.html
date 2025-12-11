@@ -8,10 +8,34 @@
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-  <a-scene mindar-image="imageTargetSrc: ./targets.mind" vr-mode-ui="enabled: false"
+  <div id="overlay">
+    <div id="avatarTop__container">
+      <div id="avatarTop__name"></div>
+      <div id="avatarTop__button"><button id="avatarButton">Show Information</button></div>
+    </div>
+
+    <div id="avatarInfo__container">
+      <div id="avatarInfoClose__container">X</div>
+      <div id="avatarInfo__left">
+        <img id="avatarInfo__img" src="./src/images/image_0_Bumbold.png" alt="avatar-image" />
+      </div>
+      <div id="avatarInfo__right">
+        <div id="avatarInfo__name"></div>
+        <div id="avatarInfo__class"></div>
+        <div id="avatarInfo__description"></div>
+      </div>
+    </div>
+  </div>
+  <a-scene ui mindar-image="imageTargetSrc: ./targets.mind" vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
     <a-assets>
@@ -23,29 +47,29 @@
 
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-    <a-entity target-img mindar-image-target="targetIndex: 0">
-      <a-entity id="bumboldContainer" class="model-container" position="0 -1 0" scale="0 0 0">
+    <a-entity target-img="targetIndex: 0" mindar-image-target="targetIndex: 0">
+      <a-entity id="avatarContainer-0" class="model-container" position="0 -1 0" scale="0 0 0">
         <a-entity id="bumboldEntity" gltf-model="#bumboldModel" animation-mixer="clip: Dance;"
           scale="0.75 0.75 0.75"></a-entity>
       </a-entity>
     </a-entity>
 
-    <a-entity target-img mindar-image-target="targetIndex: 1">
-      <a-entity id="twickleContainer" class="model-container" position="0 -0.5 0" scale="0 0 0">
+    <a-entity target-img="targetIndex: 1" mindar-image-target="targetIndex: 1">
+      <a-entity id="avatarContainer-1" class="model-container" position="0 -0.5 0" scale="0 0 0">
         <a-entity id="twickleEntity" gltf-model="#twickleModel" animation-mixer="clip: Dance;"
           scale="0.5 0.5 0.5"></a-entity>
       </a-entity>
     </a-entity>
 
-    <a-entity target-img mindar-image-target="targetIndex: 2">
-      <a-entity id="mosslooContainer" class="model-container" position="0 -0.5 0" scale="0 0 0">
+    <a-entity target-img="targetIndex: 2" mindar-image-target="targetIndex: 2">
+      <a-entity id="avatarContainer-2" class="model-container" position="0 -0.5 0" scale="0 0 0">
         <a-entity id="mosslooEntity" gltf-model="#mosslooModel" animation-mixer="clip: Dance;"
           scale="0.5 0.5 0.5"></a-entity>
       </a-entity>
     </a-entity>
 
-    <a-entity target-img mindar-image-target="targetIndex: 3">
-      <a-entity id="nimquiContainer" class="model-container" position="0 -1 0" scale="0 0 0">
+    <a-entity target-img="targetIndex: 3" mindar-image-target="targetIndex: 3">
+      <a-entity id="avatarContainer-3" class="model-container" position="0 -1 0" scale="0 0 0">
         <a-entity id="nimquiEntity" gltf-model="#nimquiModel" animation-mixer="clip: Dance;"
           scale="0.75 0.75 0.75"></a-entity>
       </a-entity>
