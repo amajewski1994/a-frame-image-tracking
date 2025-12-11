@@ -7,7 +7,7 @@ export const uiComponent = {
         let isInfoOpen = false
 
         const avatarInfoVisibilityHandler = (show) => {
-            const translateY = show ? '-100%' : '10%'
+            const translateY = show ? '0' : '110%'
 
             avatarInfo.style.transform = `translate(-50%, ${translateY})`
         }
