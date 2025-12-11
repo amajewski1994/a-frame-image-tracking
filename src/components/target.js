@@ -10,6 +10,7 @@ export const targetComponent = {
         const overlay = document.getElementById('overlay')
         const avatarTopContainer = document.getElementById('avatarTop__container')
         const avatarTopName = document.getElementById('avatarTop__name')
+        const avatarInfoImg = document.getElementById('avatarInfo__img')
         const avatarInfoName = document.getElementById('avatarInfo__name')
         const avatarInfoClass = document.getElementById('avatarInfo__class')
         const avatarInfoDescription = document.getElementById('avatarInfo__description')
@@ -23,6 +24,7 @@ export const targetComponent = {
             avatarInfoName.innerHTML = avatarObj.name
             avatarInfoClass.innerHTML = `Class: ${avatarObj.class}`
             avatarInfoDescription.innerHTML = avatarObj.description
+            avatarInfoImg.setAttribute('src', avatarObj.image)
 
             overlay.style.display = 'block'
             setTimeout(() => {
