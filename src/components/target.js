@@ -21,6 +21,7 @@ export const targetComponent = {
         this.el.addEventListener("targetFound", event => {
             avatarContainer.setAttribute('animation', 'property: scale; from: 0 0 0; to: 1 1 1;')
             avatarTopName.innerHTML = avatarObj.name
+            avatarTopName.style.color = avatarObj.color
             avatarInfoName.innerHTML = avatarObj.name
             avatarInfoClass.innerHTML = `Class: ${avatarObj.class}`
             avatarInfoDescription.innerHTML = avatarObj.description
