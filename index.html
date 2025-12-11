@@ -17,6 +17,15 @@
 </head>
 
 <body>
+  <div id="mobilePrompt__container">
+    <div id="mobilePrompt__images">
+      <img src="./src/images/image_0_Bumbold.png" alt="avatar-prompt-image" />
+      <img src="./src/images/image_1_Twickle.png" alt="avatar-prompt-image" />
+      <img src="./src/images/image_2_Mossloo.png" alt="avatar-prompt-image" />
+      <img src="./src/images/image_3_Nimqui.png" alt="avatar-prompt-image" />
+    </div>
+    <h1>Try it on your mobile device for the best experience</h1>
+  </div>
   <div id="overlay">
     <div id="avatarTop__container">
       <div id="avatarTop__name"></div>
@@ -35,7 +44,7 @@
       </div>
     </div>
   </div>
-  <a-scene ui mindar-image="imageTargetSrc: ./targets.mind" vr-mode-ui="enabled: false"
+  <a-scene mobile ui mindar-image="imageTargetSrc: ./targets.mind" vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
     <a-assets>
