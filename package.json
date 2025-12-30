@@ -3,13 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://amajewski1994.github.io/a-frame-image-tracking",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@vitejs/plugin-basic-ssl": "^2.1.0",
+    "gh-pages": "^6.3.0",
     "vite": "^7.2.4"
   }
 }
